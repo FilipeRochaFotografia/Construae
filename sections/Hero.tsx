@@ -52,7 +52,11 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(197,68,45,0.05)_0%,_transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.8)_0%,_transparent_50%)] pointer-events-none" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      {/* 
+         CONTAINER PRINCIPAL
+         Adicionei 'lg:-mt-20' para puxar tudo para cima no Desktop 
+      */}
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 lg:-mt-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           
           {/* Left Content */}
@@ -136,7 +140,7 @@ const Hero = () => {
               className="text-lg md:text-xl lg:text-2xl text-charcoal/80 mb-10 leading-relaxed max-w-3xl font-medium"
             >
               Do primeiro esboço à entrega das chaves, <br className="hidden lg:block" />
-              conduzimos seu projeto com um olhar técnico apurado <br className="hidden lg:block" />
+              conduzimos seu projeto com um olhar técnico <br className="hidden lg:block" />
               e a estética inconfundível da <strong className="text-charcoal font-bold">Construa<span className="text-terracotta">ê</span></strong>.
             </motion.p>
 
