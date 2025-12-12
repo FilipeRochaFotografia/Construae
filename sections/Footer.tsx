@@ -3,7 +3,8 @@ import React from 'react';
 import { IconMapPin, IconPhone, IconInstagram, IconArrowUp } from '../components/ui/Icons';
 
 const GoogleMapEmbed = () => {
-  const mapLink = "https://www.google.com/maps/search/?api=1&query=Edificio+Gil+Moreira+Vitoria+da+Conquista";
+  // LINK ATUALIZADO PARA O ENDEREÇO EXATO
+  const mapLink = "https://maps.app.goo.gl/T9CJHnPUjmThaGvn7";
 
   return (
     <a 
@@ -57,7 +58,6 @@ const Footer = () => {
         {/* Seção Superior */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16 border-b border-white/5 pb-12">
             <div className="flex flex-col justify-center">
-                 {/* FRASE ATUALIZADA AQUI */}
                  <h3 className="text-white font-bold text-2xl md:text-3xl mb-6 uppercase tracking-wide">
                     Do esboço à realidade: <br/> <span className="text-terracotta">Vamos começar?</span>
                  </h3>
