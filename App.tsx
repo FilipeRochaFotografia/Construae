@@ -71,7 +71,7 @@ function App() {
         className={`
           fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] h-24
           ${isScrolled 
-            ? 'bg-white/60 backdrop-blur-md shadow-sm border-b border-white/20' // ALTERADO AQUI: De 80 para 60 para mais translucidez
+            ? 'bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20' 
             : 'bg-transparent border-b border-transparent'
           }
         `}
