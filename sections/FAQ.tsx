@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+// Ícones centralizados
+import { IconPlus, IconMinus, IconHelpCircle } from '../components/ui/Icons';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const faqs = [
@@ -28,9 +29,18 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-24 relative overflow-hidden bg-white">
       
-      {/* Elementos de Fundo - Grid Técnico Discreto */}
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-beige to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-technical-grid opacity-30 pointer-events-none" />
+      {/* --- NOVA IMAGEM DE FUNDO (Wireframe/Planta) --- */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+         <img 
+           src="https://i.ibb.co/JWk5tN2S/4.png" 
+           alt="Detalhe arquitetônico de fundo" 
+           className="w-full h-full object-cover opacity-10"
+         />
+      </div>
+
+      {/* Elementos de Fundo Decorativos (Mantidos para compor a estética técnica) */}
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-beige to-transparent pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-technical-grid opacity-30 pointer-events-none z-0" />
 
       <div className="container mx-auto px-6 lg:px-12 max-w-4xl relative z-10">
         
@@ -43,7 +53,7 @@ const FAQ = () => {
           className="text-center mb-16"
         >
           <motion.div variants={fadeInUp} className="flex items-center justify-center gap-2 mb-4">
-             <HelpCircle className="w-5 h-5 text-terracotta" />
+             <IconHelpCircle className="w-5 h-5 text-terracotta" />
              <span className="text-terracotta font-bold uppercase tracking-widest text-xs">Suporte Técnico</span>
           </motion.div>
           
@@ -55,7 +65,7 @@ const FAQ = () => {
           </motion.p>
         </motion.div>
 
-        {/* Accordion List - Estilo Técnico/Minimalista */}
+        {/* Accordion List */}
         <div className="space-y-4">
           {faqs.map((item, index) => {
             const isActive = activeIndex === index;
@@ -68,10 +78,10 @@ const FAQ = () => {
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`
-                  border rounded-sm overflow-hidden transition-all duration-300 transform-gpu
+                  border rounded-sm overflow-hidden transition-all duration-300 transform-gpu bg-white/80 backdrop-blur-sm
                   ${isActive 
-                    ? 'bg-beige/30 border-terracotta shadow-sm' 
-                    : 'bg-white border-cement/20 hover:border-terracotta/30'
+                    ? 'border-terracotta shadow-md' 
+                    : 'border-cement/20 hover:border-terracotta/30'
                   }
                 `}
               >
@@ -87,7 +97,7 @@ const FAQ = () => {
                     p-1 rounded-sm transition-colors shrink-0 ml-4 border
                     ${isActive ? 'bg-terracotta border-terracotta text-white' : 'bg-transparent border-cement/30 text-cement group-hover:border-terracotta group-hover:text-terracotta'}
                   `}>
-                    {isActive ? <Minus size={16} /> : <Plus size={16} />}
+                    {isActive ? <IconMinus size={16} /> : <IconPlus size={16} />}
                   </span>
                 </button>
                 

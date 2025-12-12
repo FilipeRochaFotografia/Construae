@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
-import { ArrowUpRight, MapPin, Ruler, X, ChevronLeft, ChevronRight } from 'lucide-react';
+// Substituindo Lucide pelos ícones centralizados
+import { 
+  IconArrowUpRight, 
+  IconMapPin, 
+  IconRuler, 
+  IconX, 
+  IconChevronLeft, 
+  IconChevronRight 
+} from '../components/ui/Icons';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
 // Dados do Portfólio - Limitado a 4 Projetos
@@ -114,7 +122,7 @@ const SocialProof = () => {
                rel="noopener noreferrer"
                className="inline-flex items-center gap-2 text-charcoal font-bold uppercase tracking-widest border-b-2 border-terracotta pb-1 hover:text-terracotta transition-colors text-xs md:text-sm"
              >
-               Ver mais no Instagram <ArrowUpRight className="w-4 h-4" />
+               Ver mais no Instagram <IconArrowUpRight className="w-4 h-4" />
              </a>
           </motion.div>
         </motion.div>
@@ -155,8 +163,8 @@ const SocialProof = () => {
                 {/* Overlay Info on Hover */}
                 <div className="absolute inset-0 p-4 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent">
                   <div className="flex gap-3 text-white/80 text-[10px] font-medium uppercase tracking-wider">
-                    <span className="flex items-center gap-1"><MapPin size={10}/> {project.location}</span>
-                    <span className="flex items-center gap-1"><Ruler size={10}/> {project.area}</span>
+                    <span className="flex items-center gap-1"><IconMapPin size={10}/> {project.location}</span>
+                    <span className="flex items-center gap-1"><IconRuler size={10}/> {project.area}</span>
                   </div>
                 </div>
               </div>
@@ -168,7 +176,7 @@ const SocialProof = () => {
                 </span>
                 <h3 className="text-lg font-bold text-charcoal group-hover:text-terracotta transition-colors flex items-center justify-between">
                   {project.title}
-                  <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-terracotta" />
+                  <IconArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-terracotta" />
                 </h3>
               </div>
             </motion.div>
@@ -191,7 +199,7 @@ const SocialProof = () => {
               onClick={() => setSelectedId(null)}
               className="absolute top-6 right-6 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
             >
-              <X size={32} />
+              <IconX size={32} />
             </button>
 
             {/* Navegação */}
@@ -199,14 +207,14 @@ const SocialProof = () => {
               onClick={(e) => { e.stopPropagation(); prevProject(); }}
               className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-black/20 hover:bg-terracotta text-white rounded-full transition-colors hidden md:flex"
             >
-              <ChevronLeft size={32} />
+              <IconChevronLeft size={32} />
             </button>
 
             <button 
               onClick={(e) => { e.stopPropagation(); nextProject(); }}
               className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-black/20 hover:bg-terracotta text-white rounded-full transition-colors hidden md:flex"
             >
-              <ChevronRight size={32} />
+              <IconChevronRight size={32} />
             </button>
 
             {/* Imagem Ampliada */}
@@ -243,8 +251,8 @@ const SocialProof = () => {
                     {projects[currentIndex].title}
                   </h3>
                   <div className="flex gap-6 text-white/70 text-sm">
-                     <span className="flex items-center gap-2"><MapPin size={16}/> {projects[currentIndex].location}</span>
-                     <span className="flex items-center gap-2"><Ruler size={16}/> {projects[currentIndex].area}</span>
+                     <span className="flex items-center gap-2"><IconMapPin size={16}/> {projects[currentIndex].location}</span>
+                     <span className="flex items-center gap-2"><IconRuler size={16}/> {projects[currentIndex].area}</span>
                   </div>
                 </motion.div>
               </div>

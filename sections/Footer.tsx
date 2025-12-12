@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Phone, Instagram, ArrowUp, Mail } from 'lucide-react';
+// Substituindo Lucide pelos ícones centralizados e leves
+import { IconMapPin, IconPhone, IconInstagram, IconArrowUp } from '../components/ui/Icons';
 
 const GoogleMapEmbed = () => {
   const mapLink = "https://www.google.com/maps/search/?api=1&query=Edificio+Gil+Moreira+Vitoria+da+Conquista";
@@ -12,22 +13,25 @@ const GoogleMapEmbed = () => {
       className="block relative w-full h-[300px] md:h-[400px] bg-charcoal rounded-sm overflow-hidden border border-white/10 shadow-2xl mb-12 group cursor-pointer"
     >
       {/* 
-         IMAGEM DO MAPA
-         - Apenas a imagem, sem pino sobreposto.
+         IMAGEM DO MAPA - OTIMIZADA
+         Lazy loading para não pesar no carregamento inicial da página
       */}
       <img 
         src="https://i.ibb.co/ymkQr7N3/Mapa.png" 
         alt="Localização Construaê" 
+        width="600"
+        height="400"
+        loading="lazy"
         className="w-full h-full object-cover transition-all duration-700 filter grayscale contrast-[1.1] group-hover:grayscale-0 group-hover:scale-105"
       />
 
-      {/* Overlay Sutil (Escurece levemente para destacar o texto se necessário) */}
+      {/* Overlay Sutil */}
       <div className="absolute inset-0 bg-charcoal/5 group-hover:bg-transparent transition-colors duration-500"></div>
       
       {/* Botão Visual no Canto */}
       <div className="absolute bottom-5 right-5 z-20">
         <div className="bg-terracotta text-white px-5 py-2.5 rounded-sm font-bold text-xs uppercase tracking-widest shadow-lg group-hover:bg-terracotta-dark transition-colors border border-white/10 flex items-center gap-2">
-          <MapPin size={14} />
+          <IconMapPin size={14} />
           Ver no GPS
         </div>
       </div>
@@ -66,7 +70,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 text-white border border-white/20 px-8 py-4 uppercase tracking-widest text-sm font-bold hover:bg-terracotta hover:border-terracotta transition-all duration-300 w-fit rounded-sm"
                  >
-                    <Phone size={18} />
+                    <IconPhone size={18} />
                     Fale com a gente
                  </a>
             </div>
@@ -84,6 +88,9 @@ const Footer = () => {
               <img 
                 src="https://i.ibb.co/xxtCXrF/logo-2.png" 
                 alt="Construaê Logo" 
+                width="40"
+                height="40"
+                loading="lazy"
                 className="h-10 w-auto object-contain brightness-0 invert" 
               />
               <div className="flex flex-col">
@@ -109,7 +116,7 @@ const Footer = () => {
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest border-l-2 border-terracotta pl-3">Contato</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3 group">
-                <MapPin className="w-5 h-5 text-terracotta shrink-0 group-hover:text-white transition-colors mt-1" />
+                <IconMapPin className="w-5 h-5 text-terracotta shrink-0 group-hover:text-white transition-colors mt-1" />
                 <span>
                   Ed. Gil Moreira - Sala 5<br/>
                   Praça Gil Moreira, 01<br/>
@@ -117,13 +124,13 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3 group">
-                <Phone className="w-5 h-5 text-terracotta shrink-0 group-hover:text-white transition-colors" />
+                <IconPhone className="w-5 h-5 text-terracotta shrink-0 group-hover:text-white transition-colors" />
                 <a href="https://wa.me/5577988098956" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   (77) 98809-8956
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
-                <Instagram className="w-5 h-5 text-terracotta shrink-0 group-hover:text-white transition-colors" />
+                <IconInstagram className="w-5 h-5 text-terracotta shrink-0 group-hover:text-white transition-colors" />
                 <a href="https://www.instagram.com/constru.ae/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   @constru.ae
                 </a>
@@ -156,7 +163,7 @@ const Footer = () => {
             className="flex items-center gap-2 hover:text-terracotta transition-colors font-bold group"
           >
             Voltar ao topo 
-            <ArrowUp size={14} className="group-hover:-translate-y-1 transition-transform text-terracotta" />
+            <IconArrowUp size={14} className="group-hover:-translate-y-1 transition-transform text-terracotta" />
           </button>
         </div>
       </div>

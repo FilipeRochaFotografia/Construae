@@ -1,38 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import { fadeInUp, staggerContainer } from '../utils/animations';
-
-// --- ÍCONES SVG NATIVOS (BLINDADO CONTRA ERROS) ---
-
-const IconArrowRight = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-  </svg>
-);
-
-const IconPencilRuler = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="m21.3 15.3 2.6-2.6a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0l-2.6 2.6" />
-    <path d="m14.5 2.9 6.6 6.6" />
-    <path d="M12 7 8 11" />
-    <path d="m8 11 6 6" />
-    <path d="M4 15 2 17l1 4 4 1 2-2" />
-    <path d="m10 21 4-4" />
-    <path d="m2 17 6 6" />
-  </svg>
-);
-
-const IconCuboid = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="m21.12 6.4-6.05-4.06a2 2 0 0 0-2.17-.05L2.95 8.41a2 2 0 0 0-.95 1.7v5.36a2 2 0 0 0 .95 1.7l9.95 6.12a2 2 0 0 0 2.17.05l6.05-4.06a2 2 0 0 0 1.13-1.67V8.06a2 2 0 0 0-1.13-1.66Z" />
-    <path d="M10 22v-8" />
-    <path d="m10 14 6-4" />
-    <path d="m10 14-6-4" />
-  </svg>
-);
-
-// ---------------------------------------------------
+import { IconArrowRight, IconDraftingCompass, IconBox } from '../components/ui/Icons';
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -52,10 +22,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(197,68,45,0.05)_0%,_transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.8)_0%,_transparent_50%)] pointer-events-none" />
 
-      {/* 
-         CONTAINER PRINCIPAL
-         Adicionei 'lg:-mt-20' para puxar tudo para cima no Desktop 
-      */}
       <div className="container mx-auto px-6 lg:px-12 relative z-10 lg:-mt-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           
@@ -77,10 +43,7 @@ const Hero = () => {
                 </span>
             </motion.div>
 
-            {/* 
-              --- ELEMENTO MOBILE (Estilo Portal/Vidro) --- 
-              Visível apenas em telas pequenas (lg:hidden).
-            */}
+            {/* Elemento Mobile (Portal/Vidro) */}
             <motion.div 
               variants={{
                 hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -103,10 +66,12 @@ const Hero = () => {
                       </div>
                   </div>
 
-                  {/* Imagem Wireframe */}
+                  {/* Imagem Wireframe Mobile - Otimizada */}
                   <img 
                     src="https://i.ibb.co/bgPT7NMQ/1.png" 
                     alt="Sketch Arquitetônico Mobile" 
+                    width="400"
+                    height="300"
                     className="relative z-10 w-auto h-auto max-h-[260px] object-contain scale-110 translate-y-4 mix-blend-multiply opacity-90"
                   />
                </div>
@@ -168,10 +133,10 @@ const Hero = () => {
               className="flex flex-row gap-4 sm:gap-10 w-full max-w-2xl pt-10 border-t border-charcoal/10 justify-center lg:justify-start"
             >
               
-              {/* Item 1 */}
+              {/* Item 1 - Compasso (Arq + Eng) */}
               <div className="flex items-center gap-3 sm:gap-4 group cursor-default">
                 <div className="text-terracotta group-hover:scale-110 transition-transform duration-300">
-                  <IconPencilRuler className="w-8 h-8 sm:w-10 sm:h-10" />
+                  <IconDraftingCompass className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
                 
                 <div className="h-8 sm:h-10 w-[1px] bg-charcoal/10"></div>
@@ -186,10 +151,10 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Item 2 */}
+              {/* Item 2 - Box (3D) */}
               <div className="flex items-center gap-3 sm:gap-4 group cursor-default">
                 <div className="text-terracotta group-hover:scale-110 transition-transform duration-300">
-                  <IconCuboid className="w-8 h-8 sm:w-10 sm:h-10" />
+                  <IconBox className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
 
                 <div className="h-8 sm:h-10 w-[1px] bg-charcoal/10"></div>
@@ -207,7 +172,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Image - DESKTOP ONLY */}
+          {/* Right Image - DESKTOP ONLY - OTIMIZADA */}
           <motion.div 
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -217,6 +182,10 @@ const Hero = () => {
              <img 
                src="https://i.ibb.co/bgPT7NMQ/1.png" 
                alt="Projeto Construaê" 
+               width="800"
+               height="600"
+               loading="eager"
+               fetchPriority="high"
                className="relative z-10 w-[160%] max-w-none object-contain drop-shadow-2xl scale-125 translate-x-10"
              />
           </motion.div>

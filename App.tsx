@@ -8,7 +8,7 @@ const SocialProof = lazy(() => import('./sections/SocialProof'));
 const FAQ = lazy(() => import('./sections/FAQ'));
 const Footer = lazy(() => import('./sections/Footer'));
 
-// --- ÍCONE SVG NATIVO (Substituindo Lucide para evitar erro de versão) ---
+// --- ÍCONE SVG NATIVO (Lucide Instagram - Geometria Limpa 24x24) ---
 const IconInstagram = ({ size = 24, className }: { size?: number, className?: string }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -78,15 +78,18 @@ function App() {
       >
         <div className="container mx-auto px-4 md:px-6 lg:px-12 h-full flex items-center justify-between">
           
-          {/* Logo Area */}
-          <div 
+          {/* Logo Area - Transformado em Link para SEO e Acessibilidade */}
+          <a 
+            href="#home"
             className="flex items-center gap-3 md:gap-4 cursor-pointer group"
             onClick={(e) => handleScrollTo(e, 'home')}
           >
-            {/* Novo Logo */}
+            {/* Novo Logo OTIMIZADO (Dimensões explícitas para evitar CLS) */}
             <img 
               src="https://i.ibb.co/xxtCXrF/logo-2.png" 
-              alt="Construaê Logo" 
+              alt="Construaê Logo"
+              width="48"
+              height="48"
               className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             
@@ -99,7 +102,7 @@ function App() {
                 Arquitetura e Engenharia
               </span>
             </div>
-          </div>
+          </a>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10 font-medium text-charcoal text-sm uppercase tracking-widest">

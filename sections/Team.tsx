@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, PanInfo } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Loader2, HardHat } from 'lucide-react';
+// Substituindo Lucide pelos nossos ícones nativos
+import { IconChevronLeft, IconChevronRight, IconLoader2, IconHardHat } from '../components/ui/Icons';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const teamMembers = [
@@ -137,7 +138,6 @@ const Team = () => {
             Equipe Multidisciplinar
           </motion.h2>
           
-          {/* AJUSTE AQUI: Alterado de max-w-2xl para max-w-3xl */}
           <motion.p variants={fadeInUp} className="text-cement text-lg max-w-3xl mx-auto font-light">
             Mentes que planejam, olhos que detalham e mãos que constroem o seu sonho.
           </motion.p>
@@ -157,14 +157,14 @@ const Team = () => {
             aria-label="Anterior"
             className="absolute left-0 md:left-10 z-50 p-3 bg-white/5 hover:bg-terracotta text-white transition-colors border border-white/10 backdrop-blur-sm group"
           >
-            <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+            <IconChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
           </button>
           <button 
             onClick={nextSlide}
             aria-label="Próximo"
             className="absolute right-0 md:right-10 z-50 p-3 bg-white/5 hover:bg-terracotta text-white transition-colors border border-white/10 backdrop-blur-sm group"
           >
-            <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+            <IconChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
           </button>
 
           {/* Cards */}
@@ -191,7 +191,7 @@ const Team = () => {
 
                     {!isLoaded && (
                       <div className="absolute inset-0 flex items-center justify-center bg-charcoal-light">
-                        <Loader2 className="w-10 h-10 text-terracotta animate-spin" />
+                        <IconLoader2 size={40} className="text-terracotta animate-spin" />
                       </div>
                     )}
 
@@ -200,7 +200,7 @@ const Team = () => {
                       alt={member.name} 
                       width="350"
                       height="460"
-                      loading="eager"
+                      loading="lazy"
                       className={`
                         w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105
                         ${isLoaded ? 'opacity-100' : 'opacity-0'}
@@ -235,7 +235,7 @@ const Team = () => {
                 {teamMembers[activeIndex].name}
               </h3>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-terracotta/10 border border-terracotta/30 text-terracotta text-sm font-semibold uppercase tracking-wider">
-                <HardHat size={14} />
+                <IconHardHat size={14} />
                 {teamMembers[activeIndex].role}
               </div>
            </motion.div>
