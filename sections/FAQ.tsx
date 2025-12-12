@@ -61,7 +61,7 @@ const FAQ = () => {
             Perguntas Frequentes
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-charcoal/70">
-            Entenda como transformamos seu projeto em realidade.
+            Entenda como transformamos <br className="md:hidden" /> seu projeto em realidade.
           </motion.p>
         </motion.div>
 

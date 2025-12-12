@@ -138,8 +138,8 @@ const Team = () => {
             Equipe Multidisciplinar
           </motion.h2>
           
-          <motion.p variants={fadeInUp} className="text-cement text-lg max-w-3xl mx-auto font-light">
-            Mentes que planejam, olhos que detalham e mãos que constroem o seu sonho.
+          <motion.p variants={fadeInUp} className="text-cement text-lg max-w-5xl mx-auto font-light">
+            Soluções completas para espaços residenciais e comerciais, unindo estética, função e economia.
           </motion.p>
         </motion.div>
 

@@ -57,8 +57,9 @@ const Footer = () => {
         {/* Seção Superior */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16 border-b border-white/5 pb-12">
             <div className="flex flex-col justify-center">
+                 {/* FRASE ATUALIZADA AQUI */}
                  <h3 className="text-white font-bold text-2xl md:text-3xl mb-6 uppercase tracking-wide">
-                    Vamos construir <br/>o seu <span className="text-terracotta">sonho?</span>
+                    Do esboço à realidade: <br/> <span className="text-terracotta">Vamos começar?</span>
                  </h3>
                  <p className="text-cement mb-8 max-w-md leading-relaxed">
                     Entre em contato para agendar uma reunião técnica no nosso escritório ou solicitar um orçamento.

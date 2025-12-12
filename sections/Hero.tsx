@@ -32,10 +32,13 @@ const Hero = () => {
             animate="visible"
             className="flex flex-col items-center lg:items-start text-center lg:text-left relative z-20"
           >
-            {/* Tagline */}
+            {/* 
+               TAGLINE - AJUSTADO
+               Alterado para bg-white/30 para maior transparência
+            */}
             <motion.div 
               variants={fadeInUp} 
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm border border-charcoal/5 rounded-sm mb-6 lg:mb-8 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/30 backdrop-blur-sm border border-charcoal/5 rounded-sm mb-6 lg:mb-8 shadow-sm"
             >
                 <div className="w-2 h-2 bg-terracotta rounded-full animate-pulse" />
                 <span className="text-charcoal font-bold uppercase tracking-[0.2em] text-[0.65rem] md:text-xs">
@@ -59,9 +62,12 @@ const Hero = () => {
                {/* Wrapper com Máscara de Gradiente */}
                <div className="relative w-full flex justify-center [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]">
                   
-                  {/* O "Portal" de Fundo */}
+                  {/* 
+                     O "Portal" de Fundo - AJUSTADO
+                     Alterado para from-white/30 para ficar mais sutil atrás do desenho
+                  */}
                   <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[90%] h-[90%] z-0 pointer-events-none">
-                      <div className="w-full h-full rounded-t-[3rem] border-t border-x border-terracotta/20 bg-gradient-to-b from-white/60 to-transparent backdrop-blur-sm shadow-[inset_0_10px_20px_rgba(255,255,255,0.4)]">
+                      <div className="w-full h-full rounded-t-[3rem] border-t border-x border-terracotta/20 bg-gradient-to-b from-white/30 to-transparent backdrop-blur-sm shadow-[inset_0_10px_20px_rgba(255,255,255,0.4)]">
                         <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-terracotta/30 to-transparent" />
                       </div>
                   </div>
